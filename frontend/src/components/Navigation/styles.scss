@@ -1,0 +1,10 @@
+@import "../../assets/styles/settings";
+
+#navbar-wrapper {
+    background-color: $dark;
+    display: grid;
+    grid-template-columns: 1fr 4fr 2fr;
+    text-align: center;
+    gap: 10px;
+    color: snow;
+}
