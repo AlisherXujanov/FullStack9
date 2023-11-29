@@ -24,8 +24,14 @@ Redirection - перенаправление
 
 
 # Github repository creation steps
-1. Create a repo and copy a link into folder
-2. add          => ```git add .```
-3. and commit   => ```git commit -m "first commit"```
-4. branches     => ```git branch -M main```
-5. push  //  pull  => ```git push -u origin main``` //  ```git pull origin main```
+- https://agripongit.vincenttunru.com/
+- https://onlywei.github.io/explain-git-with-d3/#checkout-b
+- https://github.com/k88hudson/git-flight-rules/blob/master/README.md
+
+1. Create a repo and copy a link into folder 
+   - or 
+   - git clone
+4. add          => ```git add .```
+5. and commit   => ```git commit -m "first commit"```
+6. branches     => ```git branch -M main```
+7. push  //  pull  => ```git push -u origin main``` //  ```git pull origin main```
