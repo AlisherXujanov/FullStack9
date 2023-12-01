@@ -10,6 +10,10 @@
     padding: 20px;
     box-shadow: 0 4px 16px #333;
 
+    h2 {
+        font-size: 1.8em;
+    }
+
     .nav-links,
     .auth-section {
         a {
@@ -24,10 +28,7 @@
             text-decoration: underline;
         }
         button {
-            @extend %btn;
-            background-color: #ff660060;
-            border: 2px solid #ff6600;
-            padding: 10px 35px;
+            @extend %warning-btn;
         }
     }
 }

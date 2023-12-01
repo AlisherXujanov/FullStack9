@@ -15,3 +15,21 @@ $warning: #ff6600;
         background: darken(#14141450, 10%);
     }
 }
+
+%warning-btn {
+    @extend %btn;
+    background-color: #ff660060;
+    border: 2px solid #ff6600;
+    padding: 10px 35px;
+    box-shadow:
+        1px 1px 20px #ff660060,
+        -1px -1px 20px #ff660060;
+
+    &:hover {
+        box-shadow:
+            1px 1px 20px $warning,
+            -1px -1px 20px $warning,
+            inset 1px 1px 5px $warning,
+            inset -1px -1px 5px $warning;
+    }
+}
