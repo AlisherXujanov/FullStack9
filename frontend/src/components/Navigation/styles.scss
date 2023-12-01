@@ -7,4 +7,23 @@
     text-align: center;
     gap: 10px;
     color: snow;
+    padding: 20px;
+    box-shadow: 0 4px 16px #333;
+
+    .nav-links,
+    .auth-section {
+        a {
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+            color: snow;
+        }
+    }
+    .auth-section {
+        a {
+            text-decoration: underline;
+        }
+        button {
+        }
+    }
 }

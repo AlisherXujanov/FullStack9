@@ -1,2 +1,15 @@
 $dark: #141414;
 $warning: #ff6600;
+
+%btn {
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: snow;
+
+    &:hover {
+        background: darken(#14141450, 10%);
+    }
+}
