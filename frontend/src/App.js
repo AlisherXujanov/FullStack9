@@ -1,4 +1,5 @@
-import Navigation from './components/Navigation';
+import Navigation from './components/Navigation'
+import About from './components/About'
 
 function App() {
   return (
@@ -7,7 +8,11 @@ function App() {
         <Navigation />
       </nav>
 
-      <h1>Hello world</h1>
+      <section>
+        <About title={"About page"}>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique mollitia voluptate quibusdam corrupti, sapiente, reprehenderit possimus eius optio fuga quasi atque quos exercitationem laudantium totam? Aspernatur enim nihil dolorem ipsa.</p>
+        </About>
+      </section>
     </div>
   );
 }
