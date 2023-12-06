@@ -1,5 +1,8 @@
 import Navigation from './components/Navigation'
 import About from './components/About'
+import { BrowserRouter } from 'react-router-dom'
+import AllComponents from './components/AllComponents.jsx'
+
 
 function App() {
   return (
