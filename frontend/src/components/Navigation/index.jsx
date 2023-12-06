@@ -13,9 +13,9 @@ function Navigation() {
                 <div className="nav-links">
                     <Link to="/about">О нас</Link>
                     <a href="#Команда">Команда</a>
-                    <a href="#Блог">Блог</a>
-                    <a href="#Продукты">Продукты</a>
-                    <a href="#Контакты">Контакты</a>
+                    <Link to="/blog">Блог</Link>
+                    <Link to="/products">Продукты</Link>
+                    <Link to="/contacts">Контакты</Link>
                 </div>
                 <div className="auth-section">
                     <button className="warning-btn">

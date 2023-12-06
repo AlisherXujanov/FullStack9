@@ -3,6 +3,7 @@ import Navigation from '../components/Navigation'
 import About from '../components/About'
 import NoPage from './NoPage'
 import Home from './Home'
+import Blog from './Blog'
 
 function AllComponents(props) {
     const location = useLocation()
@@ -11,6 +12,7 @@ function AllComponents(props) {
             <Route path="/" element={<Navigation />} >
                 <Route index element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/blog" element={<Blog />} />
                 <Route path="*" element={<NoPage />} />
             </Route>
         </Routes>
