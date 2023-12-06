@@ -1,7 +1,8 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
-import NoPage from './NoPage'
 import Navigation from '../components/Navigation'
-import Home from '../components/Home'
+import About from '../components/About'
+import NoPage from './NoPage'
+import Home from './Home'
 
 function AllComponents(props) {
     const location = useLocation()
@@ -9,6 +10,7 @@ function AllComponents(props) {
         <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Navigation />} >
                 <Route index element={<Home />} />
+                <Route path="/about" element={<About />} />
                 <Route path="*" element={<NoPage />} />
             </Route>
         </Routes>
