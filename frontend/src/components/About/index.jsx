@@ -1,31 +1,30 @@
-import { useState } from 'react'
+import "./style.scss"
+import AboutImg from "../../assets/imgs/about.png"
+import Licence from "../../assets/icons/licence.png"
 
 function About(props) {
-    const [theme, setTheme] = useState(false)
-
-    function handleTheme(e) {
-        try {
-            setTheme(!theme)
-        } catch (e) {
-            console.error(e)
-        }
-    }
-
-    const style = {
-        backgroundColor: theme ? "#333" : "#FFF",
-        color: theme ? "#FFF" : "#333"
-    }
 
     return (
-        <div style={style}>
-            <h1>{props.title}</h1>
-            {props.children}
+        <div id='about-wrapper'>
+            <h2>О Нас</h2>
 
-            <hr />
-            <h3>{theme ? "Dark theme" : "Light theme"}</h3>
-            <button onClick={handleTheme}>
-                Toggle Theme
-            </button>
+            <div className="about">
+                <div className="left">
+                    <img src={AboutImg} alt="About" width="100%" height={400} />
+                </div>
+                <div className="right">
+                    <p>Наша Команда успешно осуществляет деятельность на нескольких рынках инвестиций. Богатство выбора инструментов этих рынков позволяет Нам успешно сохранять и преумножать капитал клиентов.</p>
+                    <br />
+                    <p>Вступить в партнерство с Fonte могут как профессиональные инвестора, так и частные лица, только начинающие открывать для себя новые перспективы. Наша юрисдикция - Международный финансовый центр «Астана» (МФЦА). Комфортные налоговые условия и регуляторные политики обеспечивают необходимые свободы и преимущества для достижения целей инвестиций.</p>
+                    <br />
+                    <p>В партнерстве с Fonte Capital LTD, инвесторы имеют возможность воспользоваться не только проверенными стратегиями, но и смогут совместно разработать персональные инвестиционные решения.</p>
+                    <br />
+                    <button className="warning-btn">
+                        <img src={Licence} alt="Licence" />
+                        Лицензии
+                    </button>
+                </div>
+            </div>
         </div>
     );
 }
