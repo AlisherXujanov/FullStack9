@@ -11,7 +11,7 @@ function About(props) {
 
             <div className="about">
                 <div className="left">
-                    <img src={AboutImg} alt="About" width="100%" height={400} />
+                    <img src={AboutImg} alt="About" width="100%" height={350} />
                 </div>
                 
                 <div className="right">

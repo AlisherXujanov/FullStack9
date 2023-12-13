@@ -1,7 +1,9 @@
+@import "../../assets/styles/settings";
+
 #blog-wrapper {
     .content {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1.5fr;
         gap: 25px;
         font-family: cursive;
 
@@ -20,6 +22,9 @@
             padding: 10px 20px;
             &:hover {
                 box-shadow: 1px 1px 10px #ff660050;
+            }
+            &:active {
+                transform: scale(0.8);
             }
         }
         p {
