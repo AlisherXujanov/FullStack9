@@ -1,0 +1,23 @@
+@import "../../assets/styles/settings";
+
+.footer-wrapper {
+    padding: 50px 100px;
+
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+    gap: 10px;
+    background-color: $dark;
+
+    .links {
+        display: flex;
+        justify-content: flex-start;
+
+        a {
+            display: block;
+            padding: 5px 10px;
+            color: darkgray;
+            text-decoration: none;
+            font-size: 0.8em;
+        }
+    }
+}

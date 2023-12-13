@@ -1,6 +1,7 @@
 import { Link, Outlet } from 'react-router-dom';
 import './styles.scss'
 import Heading from "../common/Heading"
+import Footer from "./Footer.jsx"
 
 // 1. git clone
 // 2. cd fullstack9
@@ -21,7 +22,7 @@ function Navigation() {
                 </div>
                 <div className="nav-links">
                     <Link to="/about">О нас</Link>
-                    <a href="#Команда">Команда</a>
+                    <Link to="/teams">Команда</Link>
                     <Link to="/blog">Блог</Link>
                     <Link to="/products">Продукты</Link>
                     <Link to="/contacts">Контакты</Link>
@@ -37,8 +38,9 @@ function Navigation() {
             <div id='outlet'>
                 <Outlet />
             </div>
-        </div>
 
+            <Footer />
+        </div>
     );
 }
 

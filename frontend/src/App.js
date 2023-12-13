@@ -1,6 +1,5 @@
 import { BrowserRouter } from 'react-router-dom'
 import AllComponents from './components/AllComponents.jsx'
-import Marquee from './components/common/Marquee'
 
 function App() {
   return (
@@ -8,8 +7,6 @@ function App() {
       <BrowserRouter>
         <AllComponents />
       </BrowserRouter>
-
-      <Marquee />
     </div>
   );
 }
