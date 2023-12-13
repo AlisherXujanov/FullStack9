@@ -1,17 +1,19 @@
 import "./style.scss"
 import AboutImg from "../../assets/images/about.png"
 import Licence from "../../assets/icons/licence.png"
+import Heading from "../common/Heading"
 
 function About(props) {
 
     return (
         <div id='about-wrapper'>
-            <h2>О Нас</h2>
+            <Heading size={2}>О Нас</Heading>
 
             <div className="about">
                 <div className="left">
                     <img src={AboutImg} alt="About" width="100%" height={400} />
                 </div>
+                
                 <div className="right">
                     <p>Наша Команда успешно осуществляет деятельность на нескольких рынках инвестиций. Богатство выбора инструментов этих рынков позволяет Нам успешно сохранять и преумножать капитал клиентов.</p>
                     <br />
