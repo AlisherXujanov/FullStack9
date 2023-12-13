@@ -11,7 +11,6 @@ function Heading(props) {
                 <img 
                     src={HeadingVector} 
                     alt="Vector"
-                    width={`calc(50px / ${props.size})`}
                 />
                 {props.children}
             </h2>

@@ -1,5 +1,6 @@
 import { Link, Outlet } from 'react-router-dom';
 import './styles.scss'
+import Heading from "../common/Heading"
 
 // 1. git clone
 // 2. cd fullstack9
@@ -13,7 +14,9 @@ function Navigation() {
             <div id="navbar-wrapper">
                 <div className="logo">
                     <h2>
-                        <Link to="/">Fonte</Link>
+                        <Link to="/">
+                            <Heading size={1.5}>Fonte</Heading>
+                        </Link>
                     </h2>
                 </div>
                 <div className="nav-links">
