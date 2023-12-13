@@ -1,5 +1,5 @@
 import "./style.scss"
-import AboutImg from "../../assets/imgs/about.png"
+import AboutImg from "../../assets/images/about.png"
 import Licence from "../../assets/icons/licence.png"
 
 function About(props) {

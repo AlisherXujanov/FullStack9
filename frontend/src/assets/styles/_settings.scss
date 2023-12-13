@@ -1,38 +1,40 @@
-@use "resets";
+@use "./resets";
+@import "./samples";
 
-$dark: #141414;
-$light-dark: #1c1c1c;
-$light: #ffffff;
 $warning: #ff6600;
-$text-color: darkgray;
+$warning-t: #ff660050;
+$dark: #141414;
+$dark-lighter: #202020;
+$success: #00cc00;
+$light: #f4f4f4;
 
-%btn {
-    padding: 10px 20px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background-color: transparent;
-    color: snow;
-
-    &:hover {
-        background: darken(#14141450, 10%);
-    }
+%link {
+    @extend %link-style;
 }
 
 %warning-btn {
     @extend %btn;
-    background-color: #ff660060;
-    border: 2px solid #ff6600;
     padding: 10px 35px;
+    background-color: $warning-t;
+    border: 2px solid $warning;
+    color: snow;
+    border-radius: 0;
     box-shadow:
-        1px 1px 20px #ff660060,
-        -1px -1px 20px #ff660060;
+        2px 2px 15px $warning-t,
+        -2px -2px 15px $warning-t,
+        inset 2px 2px 15px $warning-t,
+        inset -2px -2px 15px $warning-t;
 
     &:hover {
+        background-color: darken(black, 10%);
         box-shadow:
-            1px 1px 20px $warning,
-            -1px -1px 20px $warning,
-            inset 1px 1px 5px $warning,
-            inset -1px -1px 5px $warning;
+            2px 2px 15px $warning,
+            -2px -2px 15px $warning,
+            inset 2px 2px 15px $warning,
+            inset -2px -2px 15px $warning;
+        transform: scale(0.95);
+    }
+    &:active {
+        transform: scale(0.8);
     }
 }

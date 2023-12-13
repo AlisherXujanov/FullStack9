@@ -1,6 +1,12 @@
 import { Link, Outlet } from 'react-router-dom';
 import './styles.scss'
 
+// 1. git clone
+// 2. cd fullstack9
+// 3. code .
+// 4. cd frontend 
+// 5. npm install 
+
 function Navigation() {
     return (
         <div>
