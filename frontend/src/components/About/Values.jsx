@@ -10,6 +10,7 @@ function Values(props) {
     return (
         <div className="values-content">
             <div className="value-item">
+                <span></span>
                 <img src={images[0]} alt="Value" />
                 <div className="item-info">
                     <h2>Стабильность</h2>
