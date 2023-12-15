@@ -40,7 +40,7 @@ function About(props) {
             </div>
 
             <Marquee />
-            
+
         </div>
     );
 }

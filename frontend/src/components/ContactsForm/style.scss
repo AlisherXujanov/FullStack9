@@ -1,0 +1,9 @@
+@import "../../assets/styles/settings";
+
+#contacts-form-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    background-color: $black;
+    padding: 0 250px;
+}
