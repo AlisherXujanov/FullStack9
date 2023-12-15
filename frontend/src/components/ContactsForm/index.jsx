@@ -2,18 +2,22 @@ import "./style.scss"
 import Rectangle from "./Rectangle.png"
 
 function ContactsForm() {
+    function submit(e) {
+        e.preventDefault()
+    }
     return (
         <div id="contacts-form-wrapper">
-            <form>
-                <input id="full-name-input" type="text" placeholder="Full name" /> 
+            <form onSubmit={submit}>
+                <input id="full-name-input" type="text" placeholder="Полное имя" /> 
                 <div>
-                    <input id="email-input" type="email" placeholder="Email" />
-                    <input id="number-input" type="number" placeholder="Phone number" />
+                    <input id="email-input" type="email" placeholder="Почта" />
+                    <input id="number-input" type="number" placeholder="Номер телефона" />
                 </div>
                 <textarea 
                     id="description-area" 
                     cols="10" 
-                    rows="3"
+                    rows="5"
+                    placeholder="Текст сообщения"
                 ></textarea>
                 <button className="warning-btn">
                     Получить консультацию
