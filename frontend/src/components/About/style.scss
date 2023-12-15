@@ -30,6 +30,12 @@
     }
 
     #values-wrapper {
+        padding: 50px 0;
+
+        h2 {
+            margin-bottom: 50px;
+        }
+
         .values-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -43,7 +49,7 @@
 
                 img {
                     position: absolute;
-                    top: -40px;
+                    top: -45px;
                     left: -25px;
                     width: 200px;
                     height: 200px;
