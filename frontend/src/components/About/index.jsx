@@ -38,6 +38,9 @@ function About(props) {
                 <Heading size={2}>Наши ценности</Heading>
                 <Values />
             </div>
+
+            <Marquee />
+            
         </div>
     );
 }
