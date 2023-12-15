@@ -34,6 +34,23 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
+
+            .value-item {
+                display: grid;
+                grid-template-columns: 1fr 3fr;
+                gap: 5px;
+
+                .item-info {
+                    padding-top: 20px;
+
+                    h2 {
+                        margin-bottom: 20px;
+                    }
+                    p {
+                        color: darkgray;
+                    }
+                }
+            }
         }
     }
 }
