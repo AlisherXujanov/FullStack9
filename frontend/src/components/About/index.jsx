@@ -3,11 +3,12 @@ import AboutImg from "../../assets/images/about.png"
 import Licence from "../../assets/icons/licence.png"
 import Heading from "../common/Heading"
 import Marquee from "../common/Marquee"
+import Values from "./Values.jsx"
 
 function About(props) {
 
     return (
-        <div>
+        <div id="about-page">
             <div id='about-wrapper'>
                 <Heading size={2}>О Нас</Heading>
 
@@ -32,6 +33,11 @@ function About(props) {
             </div>
 
             <Marquee />
+
+            <div id="values-wrapper">
+                <Heading size={2}>Наши ценности</Heading>
+                <Values />
+            </div>
         </div>
     );
 }

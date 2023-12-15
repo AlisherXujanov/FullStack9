@@ -1,29 +1,39 @@
 @import "../../assets/styles/settings";
 
-#about-wrapper {
-    .about {
-        margin-top: 50px;
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        gap: 50px;
+#about-page {
+    #about-wrapper {
+        .about {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 50px;
 
-        p {
-            font-family: cursive;
-            color: $light;
-            line-height: 24px;
-        }
-        img {
-            filter: grayscale(100%);
-        }
-
-        .warning-btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            img {
-                margin-right: 10px;
+            p {
+                font-family: cursive;
+                color: $light;
+                line-height: 24px;
             }
-            @extend %warning-btn;
+            img {
+                filter: grayscale(100%);
+            }
+
+            .warning-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                    margin-right: 10px;
+                }
+                @extend %warning-btn;
+            }
+        }
+    }
+
+    #values-wrapper {
+        .values-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
         }
     }
 }
