@@ -16,14 +16,14 @@ function ContactsForm() {
                 <textarea 
                     id="description-area" 
                     cols="10" 
-                    rows="5"
+                    rows="8"
                     placeholder="Текст сообщения"
                 ></textarea>
                 <button className="warning-btn">
                     Получить консультацию
                 </button>
             </form>
-            <img src={Rectangle} alt="Rectangle" width={"100%"} height={450} />
+            <img src={Rectangle} alt="Rectangle" width={"100%"} height={"100%"} />
         </div>
     );
 }
