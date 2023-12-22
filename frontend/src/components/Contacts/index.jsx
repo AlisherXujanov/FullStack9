@@ -11,6 +11,10 @@ function Contacts() {
 
     function submit(e) {
         e.preventDefault()
+
+        const form = { name, email, number }
+        toast.success(`Ваше сообщение отправлено: ${name}`, { toastId: 1 })
+        e.target.reset()
     }
 
     return (
