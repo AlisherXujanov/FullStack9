@@ -14,13 +14,13 @@ export default function MapComponent() {
 
   const defaultState = {
     center: coords,
-    zoom: 5,
+    zoom: 16,
   };
 
   return (
-    <YMaps>
-      <Map defaultState={defaultState}>
-        <Placemark geometry={[55.684758, 37.738521]} />
+    <YMaps >
+      <Map defaultState={defaultState} width={"100%"}>
+        <Placemark geometry={coords} />
       </Map>
     </YMaps>
   );
