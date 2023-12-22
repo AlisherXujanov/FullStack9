@@ -1,9 +1,14 @@
 import { BrowserRouter } from 'react-router-dom'
 import AllComponents from './components/AllComponents.jsx'
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   return (
     <div className="App">
+      <ToastContainer />
+
       <BrowserRouter>
         <AllComponents />
       </BrowserRouter>

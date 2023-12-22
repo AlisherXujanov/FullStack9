@@ -1,8 +1,13 @@
 import "./style.scss"
 import Heading from "../common/Heading";
 import MapComponent from "../common/MapComponent.jsx";
+import { useState } from "react";
+import { toast } from 'react-toastify';
 
 function Contacts() {
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [number, setNumber] = useState('')
 
     function submit(e) {
         e.preventDefault()
@@ -30,9 +35,24 @@ function Contacts() {
                 </div>
                 <div className="right">
                     <form onSubmit={submit}>
-                        <input type="text" placeholder="Ваше имя" required />
-                        <input type="text" placeholder="Ваша почта" required />
-                        <input type="number" placeholder="Ваш телефон" required />
+                        <input 
+                            type="text"
+                            placeholder="Ваше имя"
+                            required 
+                            onChange={(e) => {setName(e.target.value)}}
+                        />
+                        <input 
+                            type="text" 
+                            placeholder="Ваша почта" 
+                            required 
+                            onChange={(e) => {setEmail(e.target.value)}}
+                        />
+                        <input 
+                            type="number" 
+                            placeholder="Ваш телефон" 
+                            required 
+                            onChange={(e) => {setNumber(e.target.value)}}
+                        />
                         <button type="submit">Отправить</button>
                     </form>
                 </div>
