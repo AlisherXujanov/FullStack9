@@ -7,7 +7,6 @@ function Contacts() {
     function submit(e) {
         e.preventDefault()
     }
-    // npm install @pbe/react-yandex-maps
 
     return (
         <div className="contacts">
