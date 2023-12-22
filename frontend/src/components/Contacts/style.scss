@@ -1,0 +1,40 @@
+@import "../../assets/styles/settings";
+
+.contacts {
+    .contacts-wrapper {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 50px;
+
+        .left {
+            .contact-line {
+                margin: 40px 0;
+            }
+        }
+        .right {
+            input,
+            button {
+                width: 80%;
+                padding: 20px;
+                margin-bottom: 10px;
+                outline: none;
+                border: none;
+                background-color: $black;
+                color: snow;
+                border: 1px solid transparent;
+
+                &::placeholder {
+                    color: gray;
+                }
+                &:hover,
+                &:focus {
+                    box-shadow:
+                        inset 10px 10px 50px $warning-t,
+                        10px 10px 50px $warning-t,
+                        -10px -10px 50px $warning-t;
+                    border: 1px solid yellow;
+                }
+            }
+        }
+    }
+}
