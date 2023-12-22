@@ -1,11 +1,13 @@
 import "./style.scss"
 import Heading from "../common/Heading";
+import MapComponent from "../common/MapComponent.jsx";
 
 function Contacts() {
 
     function submit(e) {
         e.preventDefault()
     }
+    // npm install @pbe/react-yandex-maps
 
     return (
         <div className="contacts">
@@ -34,6 +36,15 @@ function Contacts() {
                         <input type="number" placeholder="Ваш телефон" required />
                         <button type="submit">Отправить</button>
                     </form>
+                </div>
+            </div>
+
+            <div className="maps-wrapper">
+                <div className="map-1">
+                    <MapComponent />
+                </div>
+                <div className="map-2">
+                    <MapComponent />
                 </div>
             </div>
         </div>
