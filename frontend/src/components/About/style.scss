@@ -31,7 +31,7 @@
     }
 
     #values-wrapper {
-        padding: 50px 0;
+        padding: 100px 50px;
 
         h2 {
             margin-bottom: 50px;
@@ -79,6 +79,17 @@
                 grid-template-columns: 1fr 2fr;
             }
         }
+        #values-wrapper {
+            padding: 50px 20px;
+
+            .values-content {
+                gap: 20px;
+
+                .value-item {
+                    grid-template-columns: 120px 1fr;
+                }
+            }
+        }
     }
 }
 @media (max-width: $medium-screen) {
@@ -89,6 +100,16 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
+        #values-wrapper {
+            .values-content {
+                grid-template-columns: 1fr;
+
+                .value-item {
+                    margin-bottom: 40px;
+                    grid-template-columns: 120px 1fr;
+                }
+            }
+        }
     }
 }
 @media (max-width: $small-screen) {
@@ -97,6 +118,9 @@
             .about {
                 grid-template-columns: 1fr;
             }
+        }
+        #values-wrapper {
+            padding: 20px 10px;
         }
     }
 }
