@@ -39,7 +39,7 @@ function About(props) {
                 <Values />
             </div>
 
-            <Marquee />
+            <Marquee reversed={true} />
 
         </div>
     );
