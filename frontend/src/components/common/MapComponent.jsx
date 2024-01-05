@@ -23,7 +23,7 @@ export default function MapComponent() {
 
   return (
     <YMaps >
-      <Map defaultState={defaultState} width={"600px"}>
+      <Map defaultState={defaultState} width={"550px"}>
         <Placemark geometry={coords} />
       </Map>
     </YMaps>

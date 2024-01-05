@@ -1,6 +1,8 @@
 @import "../../assets/styles/settings";
 
 .contacts {
+    padding: 100px;
+
     .contacts-wrapper {
         display: grid;
         grid-template-columns: 1.5fr 1fr;
@@ -41,7 +43,37 @@
     .maps-wrapper {
         margin: 100px 0;
         display: flex;
-        justify-content: space-between;
-        gap: 20px;
+        justify-content: flex-start;
+        gap: 50px;
+    }
+
+    @media (max-width: 1300px) {
+        .maps-wrapper {
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: $large-screen) {
+        padding: 80px;
+        .contacts-wrapper {
+            .right {
+                input,
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @media (max-width: $medium-screen) {
+        padding: 50px;
+        .contacts-wrapper {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @media (max-width: $small-screen) {
+        padding: 50px 20px;
+        .contacts-wrapper {
+            grid-template-columns: 1fr;
+        }
     }
 }
