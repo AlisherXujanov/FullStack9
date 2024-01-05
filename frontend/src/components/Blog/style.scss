@@ -1,6 +1,8 @@
 @import "../../assets/styles/settings";
 
 #blog-wrapper {
+    padding: 100px;
+
     .content {
         display: grid;
         grid-template-columns: 1fr 1.5fr;
@@ -30,6 +32,32 @@
         p {
             color: darkgray;
             font-size: 0.75em;
+        }
+    }
+
+    @media (max-width: $large-screen) {
+        padding: 50px;
+    }
+    @media (max-width: $medium-screen) {
+        padding: 50px 10px;
+
+        .content {
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+        }
+    }
+    @media (max-width: $small-screen) {
+        .content {
+            grid-template-columns: 1fr;
+            gap: 0;
+
+            .left {
+                margin: 0;
+                padding: 0;
+            }
+            .right {
+                padding: 0 10px 20px 10px;
+            }
         }
     }
 }
