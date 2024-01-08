@@ -2,6 +2,7 @@
 
 .contacts {
     padding: 100px;
+    background-color: $dark-lighter;
 
     .contacts-wrapper {
         display: grid;
@@ -21,7 +22,7 @@
                 margin-bottom: 10px;
                 outline: none;
                 border: none;
-                background-color: $black;
+                background-color: $dark-darker;
                 color: snow;
                 border: 1px solid transparent;
 

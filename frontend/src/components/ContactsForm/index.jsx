@@ -23,7 +23,7 @@ function ContactsForm() {
                     Получить консультацию
                 </button>
             </form>
-            <img src={Rectangle} alt="Rectangle" width={"100%"} />
+            <img src={Rectangle} alt="Rectangle" width={"100%"} height={"100%"} />
         </div>
     );
 }

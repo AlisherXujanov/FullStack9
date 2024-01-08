@@ -1,46 +1,38 @@
-import { Link, Outlet } from 'react-router-dom';
-import './styles.scss'
-import Heading from "../common/Heading"
-import Footer from "./Footer.jsx"
-
-// 1. git clone
-// 2. cd fullstack9
-// 3. code .
-// 4. cd frontend 
-// 5. npm install 
+import './style.scss'
+import { Outlet } from 'react-router-dom'
+import Nav from "./Nav.jsx"
+import Footer from "../Footer"
+import { useState } from 'react'
 
 function Navigation() {
+    const [burgerMenuOpened, setBurgerMenuOpened] = useState(false)
+
     return (
         <div>
-            <div id="navbar-wrapper">
-                <div className="logo">
-                    <h2>
-                        <Link to="/">
-                            <Heading size={1.5}>Fonte</Heading>
-                        </Link>
-                    </h2>
+            <header>
+                <div className={burgerMenuOpened ? "burger-menu-wrapper opened" : "burger-menu-wrapper"}>
+                    <div className='top'></div>    
+                    <div className='middle'></div>    
+                    <div className='bottom'></div>    
                 </div>
-                <div className="nav-links">
-                    <Link to="/about">О нас</Link>
-                    <Link to="/teams">Команда</Link>
-                    <Link to="/blog">Блог</Link>
-                    <Link to="/products">Продукты</Link>
-                    <Link to="/contacts">Контакты</Link>
-                </div>
-                <div className="auth-section">
-                    <button className="warning-btn">
-                        Войти
-                    </button>
-                    <a href="#ru">Рус</a>
-                </div>
-            </div>
-            
+                <input  
+                    id='burger-menu-toggler' 
+                    type="checkbox" 
+                    onClick={(e) => {setBurgerMenuOpened(e.target.checked)}}
+                />
+                {/* ...:checked + .nav-wrapper > .menu */}
+                <Nav />
+            </header>
+
             <div id='outlet'>
                 <Outlet />
             </div>
 
-            <Footer />
+            <footer id="footer">
+                <Footer />
+            </footer>
         </div>
+
     );
 }
 

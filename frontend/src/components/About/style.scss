@@ -1,126 +1,145 @@
 @import "../../assets/styles/settings";
 
-#about-page {
-    #about-wrapper {
+#about-wrapper {
+    .about {
         padding: 100px;
 
-        .about {
-            margin-top: 50px;
+        .about-content {
             display: grid;
-            grid-template-columns: 1fr 3fr;
+            grid-template-columns: 1fr 2.5fr;
             gap: 50px;
+            margin-top: 50px;
 
-            p {
-                font-family: cursive;
-                color: $light;
-                line-height: 24px;
-            }
-            img {
-                filter: grayscale(100%);
-            }
-            .warning-btn {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            .left {
                 img {
-                    margin-right: 10px;
+                    filter: grayscale(100%);
                 }
-                @extend %warning-btn;
+            }
+
+            .right {
+                p {
+                    font-family: cursive;
+                    line-height: 30px;
+                    color: darkgray;
+                }
+
+                button {
+                    @extend %warning-btn;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        margin-right: 10px;
+                    }
+                }
             }
         }
     }
-
-    #values-wrapper {
-        padding: 100px 50px;
-
-        h2 {
-            margin-bottom: 50px;
-        }
+    .values {
+        margin-top: 50px;
+        padding: 100px;
 
         .values-content {
+            margin-top: 30px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 30px;
 
             .value-item {
-                display: grid;
-                grid-template-columns: 1fr 3fr;
-                gap: 5px;
-                position: relative;
+                display: flex;
 
-                img {
-                    position: absolute;
-                    top: -45px;
-                    left: -25px;
-                    width: 200px;
-                    height: 200px;
-                }
-
-                .item-info {
-                    padding-top: 20px;
-
+                div {
                     h2 {
-                        margin-bottom: 20px;
+                        margin-bottom: 30px;
                     }
                     p {
                         color: darkgray;
+                        font-family: cursive;
+                        line-height: 25px;
                     }
+                    padding-top: 45px;
                 }
             }
         }
     }
-}
+    #teams {
+        padding: 100px;
+        margin: 50px 0;
+        .info {
+            color: darkgray;
+            width: 70%;
+            padding: 50px 0 50px 0;
+        }
+        .teams-wrapper {
+            .images {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 10px;
 
-@media (max-width: $large-screen) {
-    #about-page {
-        #about-wrapper {
-            padding: 50px;
-            .about {
-                grid-template-columns: 1fr 2fr;
+                .member {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                img {
+                    border-radius: 50%;
+                    filter: grayscale(100%);
+                }
             }
         }
-        #values-wrapper {
-            padding: 50px 20px;
+    }
+
+    @media (max-width: $large-screen) {
+        .values {
+            padding: 20px;
+        }
+        #teams {
+            padding: 20px;
+
+            .teams-wrapper {
+                .images {
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $medium-screen) {
+        .about {
+            padding: 20px;
+            .about-content {
+                grid-template-columns: 0.5fr 1fr;
+                gap: 30px;
+            }
+        }
+        .values {
+            padding: 10px;
 
             .values-content {
-                gap: 20px;
-
-                .value-item {
-                    grid-template-columns: 120px 1fr;
-                }
-            }
-        }
-    }
-}
-@media (max-width: $medium-screen) {
-    #about-page {
-        #about-wrapper {
-            padding: 30px 10px;
-            .about {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        #values-wrapper {
-            .values-content {
-                grid-template-columns: 1fr;
-
-                .value-item {
-                    margin-bottom: 40px;
-                    grid-template-columns: 120px 1fr;
-                }
-            }
-        }
-    }
-}
-@media (max-width: $small-screen) {
-    #about-page {
-        #about-wrapper {
-            .about {
                 grid-template-columns: 1fr;
             }
         }
-        #values-wrapper {
-            padding: 20px 10px;
+        #teams {
+        }
+    }
+
+    @media (max-width: $small-screen) {
+        .about {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+        #teams {
+            .teams-wrapper {
+                .images {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
         }
     }
 }

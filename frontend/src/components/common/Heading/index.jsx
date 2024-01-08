@@ -4,21 +4,19 @@ import HeadingVector from "../../../assets/icons/headingVector.png"
 function Heading(props) {
     const fontSize = {
         fontSize: `calc(48px / ${props.size})`,
+        color: props.color ? props.color : "",
+        filter: props.color ? "grayscale(100%)" : "",
     }
-    const imgStyle = {
-        filter: props.filtered ? 'grayscale(100%)' : 'none'
-    }
-
     return (
         <div className="heading-wrapper">
-            <h2 style={fontSize}>
+            <b style={fontSize}>
                 <img 
-                    style={imgStyle}
                     src={HeadingVector} 
                     alt="Vector"
+                    width={`calc(50px / ${props.size})`}
                 />
                 {props.children}
-            </h2>
+            </b>
         </div>
     );
 }

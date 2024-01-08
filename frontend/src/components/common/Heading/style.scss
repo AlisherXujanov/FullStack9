@@ -1,11 +1,13 @@
 .heading-wrapper {
-    h2 {
+    b {
         display: inline-block;
         position: relative;
+        font-weight: 500;
+
         img {
             position: absolute;
-            right: -20px;
-            top: -10px;
+            right: -25px;
+            top: -15px;
         }
     }
 }
