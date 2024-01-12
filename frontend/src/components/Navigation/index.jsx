@@ -1,12 +1,19 @@
 import './style.scss'
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
+import Nav from "./Nav.jsx"
 
 function Navigation() {
     return (
         <>
-            <h3>Navigation</h3>
-            
+            <header>
+                <Nav />
+            </header>
+
             <Outlet />
+            
+            <footer>
+                <h2>Footer</h2>
+            </footer>
         </>
     );
 }

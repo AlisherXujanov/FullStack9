@@ -1,5 +1,4 @@
 import { BrowserRouter } from 'react-router-dom'
-import './components/AllComponents.jsx'
 import AllComponents from './components/AllComponents.jsx';
 
 function App() {
