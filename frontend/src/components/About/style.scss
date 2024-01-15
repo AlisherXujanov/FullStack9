@@ -36,4 +36,28 @@
             }
         }
     }
+
+    .values-content {
+        padding: 100px;
+
+        .content {
+            padding: 50px 0;
+            .info {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+
+                .value {
+                    display: grid;
+                    grid-template-columns: 200px 1fr;
+                    .value-content {
+                        p {
+                            color: darkgray;
+                            margin-top: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

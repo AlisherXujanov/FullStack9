@@ -2,6 +2,7 @@ import './style.scss'
 import Heading from "../common/Heading"
 import Licence from "./licence.png"
 import AboutImg from "./about.png"
+import Values from "./Values.jsx"
 
 
 function About() {
@@ -23,6 +24,15 @@ function About() {
                             Лицензии
                         </button>
                     </div>
+                </div>
+            </section>
+            <section className='values-content'>
+                <Heading size={1.5}>
+                    Наши ценности
+                </Heading>
+
+                <div className="content">
+                    <Values />
                 </div>
             </section>
         </div>
