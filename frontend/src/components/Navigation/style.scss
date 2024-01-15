@@ -2,6 +2,9 @@
 
 header {
     background-color: $dark;
+    color: $light;
+    padding: 20px 0;
+
     nav {
         display: flex;
         justify-content: space-around;
@@ -11,7 +14,13 @@ header {
         .middle {
             a {
                 text-decoration: none;
-                color: snow;
+                color: $light;
+                padding: 10px 20px;
+            }
+        }
+        .right {
+            span {
+                margin-left: 20px;
             }
         }
     }
