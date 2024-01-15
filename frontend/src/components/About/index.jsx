@@ -1,15 +1,6 @@
 import './style.scss'
+import Heading from "../common/Heading"
 
-function Heading(props) {
-    // props = {
-    //     children: "..." ,
-    //     size: 2,
-    // }
-    const size = `${48 / props.size}px`
-    return (
-        <h1 style={{fontSize: size}}>{props.children}</h1>
-    )
-}
 function About() {
     return (
         <div id='about-page'>
