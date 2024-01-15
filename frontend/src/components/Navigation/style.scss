@@ -4,6 +4,9 @@ header {
     background-color: $dark;
     color: $light;
     padding: 20px 0;
+    box-shadow: 5px 5px 50px 20px $warning-t;
+    position: relative;
+    z-index: 1;
 
     nav {
         display: flex;
