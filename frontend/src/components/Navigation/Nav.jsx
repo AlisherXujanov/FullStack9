@@ -1,9 +1,16 @@
 import { Link } from 'react-router-dom'
 import Heading from "../common/Heading"
+import { toast } from 'react-toastify';
+
 
 function Nav(props) {
+    const notify = () => toast.success("Wow so easy!", {
+        theme: "dark"
+    });
+
     return (
         <nav>
+            
             <div className="left">
                 <Heading size={1.4}>Fonte</Heading>
             </div>
@@ -15,7 +22,9 @@ function Nav(props) {
                 <Link to={"/contacts"}>Contacts</Link>
             </div>
             <div className="right">
-                <button className='warning-btn'>Войти</button>
+                <button className='warning-btn'
+                    onClick={notify}
+                >Войти</button>
                 <span id='lang-toggler'>
                     Рус
                 </span>

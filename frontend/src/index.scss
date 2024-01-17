@@ -3,3 +3,8 @@
 .warning-btn {
     @extend %warning-btn;
 }
+
+.my-toaster {
+    background-color: green;
+    color: snow;
+}
