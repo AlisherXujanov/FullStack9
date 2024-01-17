@@ -49,7 +49,20 @@
 
                 .value {
                     display: grid;
-                    grid-template-columns: 200px 1fr;
+                    grid-template-columns: 150px 1fr;
+                    gap: 10px;
+                    position: relative;
+
+                    h1 {
+                        font-size: 30px;
+                    }
+
+                    img {
+                        position: relative;
+                        top: -70px;
+                        width: 200px;
+                        height: 200px;
+                    }
                     .value-content {
                         p {
                             color: darkgray;
