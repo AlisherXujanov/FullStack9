@@ -1,0 +1,51 @@
+@import "../../../assets/styles/settings";
+
+@mixin flex($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: 20px;
+}
+
+.pagination-wrapper {
+    @include flex(column);
+
+    .current-items {
+        @include flex();
+
+        .item {
+        }
+    }
+
+    ul[role="navigation"] {
+        @include flex();
+        list-style-type: none;
+
+        li {
+            cursor: pointer;
+            padding: 5px;
+            color: lightgray;
+
+            &:hover:not(.selected):not(.disabled) {
+                background-color: $dark-lighter;
+
+                &:active {
+                    background-color: $warning-t;
+                    color: snow;
+                }
+            }
+        }
+
+        li.selected {
+            color: $warning;
+            font-weight: bold;
+            transform: scale(1.5);
+            text-decoration: underline solid $warning 2px;
+        }
+        li.disabled {
+            color: gray;
+            cursor: not-allowed;
+        }
+    }
+}

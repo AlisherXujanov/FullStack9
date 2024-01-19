@@ -1,7 +1,7 @@
 // npm i react-paginate
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
-
+import "./style.scss"
 
 function Items({ currentItems, layout }) {
     return (
@@ -9,7 +9,7 @@ function Items({ currentItems, layout }) {
             {
                 currentItems && currentItems.map((item, index) => {
                     return (
-                        <div key={index}>
+                        <div className='item' key={index}>
                             {layout(item)}
                         </div>
                     )
@@ -41,7 +41,7 @@ function PaginatedItems(props) {
     };
 
     return (
-        <>
+        <div className='pagination-wrapper'>
             <Items currentItems={currentItems} layout={props.itemLayout} />
             <ReactPaginate
                 breakLabel="..."
@@ -52,7 +52,7 @@ function PaginatedItems(props) {
                 previousLabel="< previous"
                 renderOnZeroPageCount={null}
             />
-        </>
+        </div>
     );
 }
 

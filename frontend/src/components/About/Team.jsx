@@ -5,7 +5,7 @@ import FourthImage from "../../assets/images/team/4.jpg"
 import FifthImage from "../../assets/images/team/5.jpg"
 import SixthImage from "../../assets/images/team/6.jpg"
 
-import Pagination from "../common/Pagination.jsx"
+import Pagination from "../common/Pagination"
 
 function Team(props) {
     const test_names = ["Alex", "Harry", "Paul", "Michael", "Luiza", "Andrew"]
