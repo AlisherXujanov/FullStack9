@@ -6,18 +6,12 @@ function CarouselComponent(props) {
     const imgStyle = {
         filter: props.blurred ? "grayscale(100%) brightness(0.5)" : "none"
     }
-
     return (
-        <div className="carousel-c-wrapper">
+        <section className="carousel-section">
             <div className="carousel-c-children">
-                {props.children}
+                { props.children }
             </div>
-            <Carousel
-                autoPlay={true}
-                infiniteLoop={true}
-                showStatus={false}
-                showThumbs={false}
-            >
+            <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true} showStatus={false}>
                 {
                     props.images.map((img, index) => {
                         return (
@@ -25,16 +19,16 @@ function CarouselComponent(props) {
                                 <img 
                                     style={imgStyle}
                                     src={img} 
-                                    width={"100%"} 
-                                    height={650} 
-                                    alt="Slide" 
+                                    alt={"Carousel-item-" + index} 
+                                    width={"100%"}
+                                    height="650"
                                 />
                             </div>
                         )
                     })
                 }
             </Carousel>
-        </div>
+        </section>
     );
 }
 

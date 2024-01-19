@@ -1,34 +1,34 @@
 @import "../../assets/styles/settings";
 
-#about-page {
-    background-color: $dark;
-    color: $light;
+#about-wrapper {
+    .about {
+        padding: 100px;
 
-    .about-content {
-        padding: 100px 150px;
-
-        .content {
+        .about-content {
             display: grid;
-            grid-template-columns: 1fr 3fr;
+            grid-template-columns: 1fr 2.5fr;
             gap: 50px;
-            margin: 20px 0;
+            margin-top: 50px;
 
-            img {
-                filter: grayscale(100%);
+            .left {
+                img {
+                    filter: grayscale(100%);
+                }
             }
 
-            .info {
-                padding-right: 50px;
-
+            .right {
                 p {
-                    margin-bottom: 30px;
-                    color: lightgray;
-                    font-size: 1.1em;
+                    font-family: cursive;
+                    line-height: 30px;
+                    color: darkgray;
                 }
+
                 button {
+                    @extend %warning-btn;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+
                     img {
                         margin-right: 10px;
                     }
@@ -36,39 +36,108 @@
             }
         }
     }
-
-    .values-content {
+    .values {
+        margin-top: 50px;
         padding: 100px;
 
-        .content {
-            padding: 50px 0;
-            .info {
+        .values-content {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+
+            .value-item {
+                display: flex;
+
+                div {
+                    h2 {
+                        margin-bottom: 30px;
+                    }
+                    p {
+                        color: darkgray;
+                        font-family: cursive;
+                        line-height: 25px;
+                    }
+                    padding-top: 45px;
+                }
+            }
+        }
+    }
+    #teams {
+        padding: 100px;
+        margin: 50px 0;
+        .info {
+            color: darkgray;
+            width: 70%;
+            padding: 50px 0 50px 0;
+        }
+        .teams-wrapper {
+            .images {
                 display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 10px;
 
-                .value {
-                    display: grid;
-                    grid-template-columns: 150px 1fr;
-                    gap: 10px;
-                    position: relative;
+                .member {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
 
-                    h1 {
-                        font-size: 30px;
-                    }
+                img {
+                    border-radius: 50%;
+                    filter: grayscale(100%);
+                }
+            }
+        }
+    }
 
-                    img {
-                        position: relative;
-                        top: -70px;
-                        width: 200px;
-                        height: 200px;
-                    }
-                    .value-content {
-                        p {
-                            color: darkgray;
-                            margin-top: 30px;
-                        }
-                    }
+    @media (max-width: $large-screen) {
+        .values {
+            padding: 20px;
+        }
+        #teams {
+            padding: 20px;
+
+            .teams-wrapper {
+                .images {
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $medium-screen) {
+        .about {
+            padding: 20px;
+            .about-content {
+                grid-template-columns: 0.5fr 1fr;
+                gap: 30px;
+            }
+        }
+        .values {
+            padding: 10px;
+
+            .values-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        #teams {
+        }
+    }
+
+    @media (max-width: $small-screen) {
+        .about {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+        #teams {
+            .teams-wrapper {
+                .images {
+                    grid-template-columns: repeat(2, 1fr);
                 }
             }
         }
