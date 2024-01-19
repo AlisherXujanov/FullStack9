@@ -1,17 +1,16 @@
 // npm i react-paginate
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 
 
-
-function Items({ currentItems }) {
+function Items({ currentItems, layout }) {
     return (
         <div className='current-items'>
             {
                 currentItems && currentItems.map((item, index) => {
                     return (
                         <div key={index}>
-                            { item }
+                            {layout(item)}
                         </div>
                     )
                 })
@@ -20,8 +19,7 @@ function Items({ currentItems }) {
     )
 }
 
-
-
+// REQUIRES: items, itemsPerPage, itemLayout
 function PaginatedItems(props) {
     const [itemOffset, setItemOffset] = useState(0);
 
@@ -44,7 +42,7 @@ function PaginatedItems(props) {
 
     return (
         <>
-            <Items currentItems={currentItems} />
+            <Items currentItems={currentItems} layout={props.itemLayout} />
             <ReactPaginate
                 breakLabel="..."
                 nextLabel="next >"
@@ -57,3 +55,5 @@ function PaginatedItems(props) {
         </>
     );
 }
+
+export default PaginatedItems;
