@@ -64,6 +64,8 @@ function About() {
                 <Team />
             </div>
             
+            
+
             <Marquee />
             <ContactsForm />
         </div>
