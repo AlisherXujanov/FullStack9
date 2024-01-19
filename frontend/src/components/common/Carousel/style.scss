@@ -30,4 +30,12 @@
             transform: scale(1.5);
         }
     }
+
+    .slide-wrapper {
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
 }
