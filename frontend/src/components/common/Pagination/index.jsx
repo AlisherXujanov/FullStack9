@@ -1,16 +1,23 @@
 // npm i react-paginate
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
+import BlogLayout from '../../About/BlogLayout';
 import "./style.scss"
 
-function Items({ currentItems, layout }) {
+function Items({ currentItems, layoutName }) {
     return (
         <div className='current-items'>
             {
                 currentItems && currentItems.map((item, index) => {
                     return (
                         <div className='item' key={index}>
-                            {layout(item)}
+                            {
+                                layoutName === "BlogLayout" 
+                                    ? 
+                                        <BlogLayout item={item} />
+                                    :
+                                        'No layout specified'
+                            }
                         </div>
                     )
                 })
@@ -42,7 +49,7 @@ function PaginatedItems(props) {
 
     return (
         <div className='pagination-wrapper'>
-            <Items currentItems={currentItems} layout={props.itemLayout} />
+            <Items currentItems={currentItems} layoutName={props.layoutName} />
             <ReactPaginate
                 breakLabel="..."
                 nextLabel="&raquo;"
