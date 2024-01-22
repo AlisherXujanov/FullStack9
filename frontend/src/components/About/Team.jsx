@@ -5,25 +5,11 @@ import FourthImage from "../../assets/images/team/4.jpg"
 import FifthImage from "../../assets/images/team/5.jpg"
 import SixthImage from "../../assets/images/team/6.jpg"
 
-import Pagination from "../common/Pagination"
 
 function Team(props) {
-    const test_names = ["Alex", "Harry", "Paul", "Michael", "Luiza", "Andrew"]
-
-    const itemLayout = (item) => {
-        return (
-            <div style={{color: 'red'}}>
-                {item}
-            </div>
-        )
-    }
-
     return (
         <div>
             <p className="info">Команда Fonte Capital LTD – основа успеха. Каждый сотрудник Компании – это ценный актив в рабочем процессе фонда. Наша цель – создание такой рабочей атмосферы и условий, которые позволят максимально раскрыть потенциал каждого сотрудника для достижения максимального результата.</p>
-            <br />
-            <Pagination items={test_names} itemsPerPage={3} itemLayout={itemLayout}/>
-            <br />
             <div className="teams-wrapper">
                 <div className="images">
                     <div className="member">

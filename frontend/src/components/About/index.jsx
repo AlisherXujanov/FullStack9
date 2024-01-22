@@ -7,6 +7,8 @@ import Team from "./Team.jsx"
 import Marquee from "../common/Marquee"
 import ContactsForm from "../ContactsForm"
 import CarouselComponent from "../common/Carousel"
+import Pagination from "../common/Pagination"
+import BlogItems from "../../db/blog.json"
 
 import Img1 from "../../assets/images/img1.png"
 import Img2 from "../../assets/images/img2.png"
@@ -64,7 +66,17 @@ function About() {
                 <Team />
             </div>
 
-            <Marquee />
+            <Marquee/>
+
+            <div id="company-blog-wrapper">
+                <Heading size={1}>Блог компании</Heading>
+                {/* <Pagination 
+                    items={BlogItems} 
+                    itemsPerPage={3} 
+                    itemLayout={itemLayout}
+                /> */}
+            </div>
+
             <ContactsForm />
         </div>
     );
