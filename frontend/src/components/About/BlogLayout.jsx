@@ -15,11 +15,13 @@ function BlogLayout(props) {
     }
 
     return (
-        <div className={"blog-" + props.item.id}>
+        <div className={"blog blog-" + props.item.id}>
             <img 
                 src={images[imgIndex]} 
                 alt={"Blog-" + props.item.id}
                 className={"blog-" + props.item.id + "-img"}
+                width={"100%"}
+                height={200}
             />
             <h1>{props.item.title}</h1>
             
