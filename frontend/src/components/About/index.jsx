@@ -15,14 +15,11 @@ import Img4 from "../../assets/images/img4.png"
 import Img5 from "../../assets/images/img5.png"
 
 function About() {
-    const images = [[Img1, Img2, Img3], [Img4, Img5]]
+    const images = [Img1, Img2, Img3, Img4, Img5]
 
     return (
         <div id="about-wrapper">
-            <CarouselComponent 
-                images={images} blurred={true} 
-                indicatorsAsNumbers={true}
-            >
+            <CarouselComponent images={images} blurred={true}>
                 <div className="inner-carousel">
                     <h1>Хедж-фонд</h1>
                     <br />
@@ -66,8 +63,6 @@ function About() {
                 <Heading size={2}>Наша команда</Heading>
                 <Team />
             </div>
-            
-            
 
             <Marquee />
             <ContactsForm />

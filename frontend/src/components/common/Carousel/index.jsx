@@ -23,7 +23,7 @@ function CarouselComponent(props) {
                 tabIndex={0}
                 aria-label={`${label} ${index + 1}`}
             >
-                {index + 1}
+                {index+1}
             </span>
         );
     }
@@ -41,24 +41,16 @@ function CarouselComponent(props) {
                 renderIndicator={props.indicatorsAsNumbers ? indicatorsAsNumbers : undefined}
             >
                 {
-                    props.images.map((item, index) => {
+                    props.images.map((img, index) => {
                         return (
-                            <div key={index + 100} className="slide-wrapper">
-                                {
-                                    item.map((img, index2) => {
-                                        return (
-                                            <div key={index2}>
-                                                <img
-                                                    style={imgStyle}
-                                                    src={img}
-                                                    alt={"Carousel-item-" + index}
-                                                    width={"100%"}
-                                                    height="250"
-                                                />
-                                            </div>
-                                        )
-                                    })
-                                }
+                            <div key={index}>
+                                <img
+                                    style={imgStyle}
+                                    src={img}
+                                    alt={"Carousel-item-" + index}
+                                    width={"100%"}
+                                    height="650"
+                                />
                             </div>
                         )
                     })
