@@ -23,7 +23,7 @@ function BlogLayout(props) {
                 width={"100%"}
                 height={200}
             />
-            <h1>{props.item.title}</h1>
+            <h3>{props.item.title}</h3>
             
             <button className="warning-btn">
                 Подробнее
