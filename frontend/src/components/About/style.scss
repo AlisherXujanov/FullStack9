@@ -93,9 +93,11 @@
     }
 
     #company-blog-wrapper {
-        padding: 100px;
+        padding: 50px 100px;
 
         .pagination-wrapper {
+            padding: 0 50px 0 50px;
+
             .current-items {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);

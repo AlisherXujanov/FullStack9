@@ -10,6 +10,7 @@
 
 .pagination-wrapper {
     @include flex(column);
+    position: relative;
 
     .current-items {
         @include flex();
@@ -50,6 +51,11 @@
         li.disabled {
             color: gray;
             cursor: not-allowed;
+        }
+        .previous,
+        .next {
+            position: absolute;
+            z-index: 1;
         }
     }
 }
