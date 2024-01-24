@@ -16,6 +16,24 @@
         @include flex();
 
         .item {
+            .warning-btn {
+                margin-top: 20px;
+                border: none;
+                background-color: transparent;
+                box-shadow: none;
+                color: $warning;
+                padding: 10px 5px 10px 0;
+
+                &::after {
+                    content: ">";
+                    margin-left: 10px;
+                    font-size: 1.2em;
+                }
+
+                &:hover {
+                    border-bottom: 1px solid $warning;
+                }
+            }
         }
     }
 
@@ -51,11 +69,27 @@
         li.disabled {
             color: gray;
             cursor: not-allowed;
+            border: solid gray 3px;
         }
         .previous,
         .next {
             position: absolute;
             z-index: 1;
+            top: 35%;
+            color: $warning;
+            font-weight: bold;
+            padding: 0 8px;
+            border: solid $warning 3px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .previous {
+            left: -15px;
+        }
+        .next {
+            right: -15px;
         }
     }
 }
