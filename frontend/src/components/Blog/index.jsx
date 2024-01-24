@@ -1,6 +1,5 @@
 import "./style.scss"
 import Heading from "../common/Heading"
-import Item from "./Item.jsx"
 import Blog1 from "../../assets/images/blog-1.png"
 import Blog2 from "../../assets/images/blog-2.png"
 import Blog3 from "../../assets/images/blog-3.png"
@@ -8,7 +7,6 @@ import Blog4 from "../../assets/images/img2.png"
 import Blog5 from "../../assets/images/img3.png"
 import BlogItems from '../../db/blog.json'
 import { Link } from 'react-router-dom'
-
 
 function Blog(props) {
     const images = [Blog1, Blog2, Blog3, Blog4, Blog5]
@@ -19,8 +17,6 @@ function Blog(props) {
         else { imgIndex = id % images.length }
         return imgIndex
     }
-
-    // const subtitle = item.title.split(" ").slice(0, 3).join(" ")
 
     return (
         <div id="blog-wrapper">
