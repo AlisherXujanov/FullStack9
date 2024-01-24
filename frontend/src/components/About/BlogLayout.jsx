@@ -3,6 +3,7 @@ import Blog2 from "../../assets/images/blog-2.png"
 import Blog3 from "../../assets/images/blog-3.png"
 import Blog4 from "../../assets/images/img2.png"
 import Blog5 from "../../assets/images/img3.png"
+import { Link } from "react-router-dom"
 
 function BlogLayout(props) {
     const images = [Blog1, Blog2, Blog3, Blog4, Blog5]
@@ -25,9 +26,12 @@ function BlogLayout(props) {
             />
             <h3>{props.item.title}</h3>
             
-            <button className="warning-btn">
-                Подробнее
-            </button>
+
+            <Link to={"/blog/details/" + props.item.id}>
+                <button className="warning-btn">
+                    Подробнее
+                </button>
+            </Link>
         </div>
     );
 }
