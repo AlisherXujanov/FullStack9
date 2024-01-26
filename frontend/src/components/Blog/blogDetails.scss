@@ -27,4 +27,14 @@
     .subtitle-2 {
         color: lightgray;
     }
+
+    @media (max-width: $large-screen) {
+        padding: 50px 100px;
+    }
+    @media (max-width: $medium-screen) {
+        padding: 50px;
+    }
+    @media (max-width: $small-screen) {
+        padding: 30px 20px;
+    }
 }
