@@ -134,6 +134,15 @@
                 }
             }
         }
+        #company-blog-wrapper {
+            padding: 50px;
+
+            .pagination-wrapper {
+                .current-items {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+        }
     }
 
     @media (max-width: $medium-screen) {
@@ -152,6 +161,16 @@
             }
         }
         #teams {
+        }
+    }
+
+    @media (max-width: 700px) {
+        #company-blog-wrapper {
+            .pagination-wrapper {
+                .current-items {
+                    grid-template-columns: 1fr;
+                }
+            }
         }
     }
 
