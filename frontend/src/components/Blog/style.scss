@@ -25,4 +25,31 @@
             font-size: 0.75em;
         }
     }
+
+    @media (max-width: $large-screen) {
+        padding: 50px;
+        .content {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @media (max-width: $medium-screen) {
+        padding: 50px 20px;
+        .content {
+            gap: 10px;
+        }
+    }
+    @media (max-width: $small-screen) {
+        .content {
+            grid-template-columns: 1fr;
+
+            .left {
+                padding: 0;
+                margin-top: 20px;
+            }
+            .right {
+                padding: 0;
+                margin-bottom: 40px;
+            }
+        }
+    }
 }
