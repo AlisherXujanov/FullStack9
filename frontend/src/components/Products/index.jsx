@@ -29,6 +29,9 @@ function Products(props) {
                     onChange={(e) => {setText(e.target.value)}} 
                 />
             </div>
+
+
+            {/* Create 8 inputs for useState and control them all */}
         </div>
     );
 }
