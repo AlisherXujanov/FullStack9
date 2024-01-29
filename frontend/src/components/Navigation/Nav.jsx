@@ -1,12 +1,20 @@
 import Heading from "../common/Heading"
 import { Link, useNavigate } from 'react-router-dom'
+import { useState } from "react"
+import { useTranslation } from "react-i18next"
 
-// 1. Create a burger
-// 2. Put the input checkbox onto the burger and make it invisible
-// 3. Open the Nav-width div when the checkbox is checked
 
 function Nav(props) {
-    const navigate = useNavigate();
+    const navigate = useNavigate()
+
+    const { t, i18n: { changeLanguage, language } } = useTranslation();
+    const [currentLanguage, setCurrentLanguage] = useState(language)
+
+    const handleChangeLanguage = () => {
+        const newLanguage = currentLanguage === "en" ? "ru" : "en";
+        setCurrentLanguage(newLanguage);
+        changeLanguage(newLanguage);
+    }
 
     const goToTeamsHash = () => {
         navigate('/about');
@@ -51,8 +59,8 @@ function Nav(props) {
                     <button className="warning-btn">
                         login
                     </button>
-                    <span>
-                        Рус
+                    <span onClick={handleChangeLanguage}>
+                        {currentLanguage}
                     </span>
                 </div>
             </div>
