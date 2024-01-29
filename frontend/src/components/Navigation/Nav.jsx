@@ -39,28 +39,31 @@ function Nav(props) {
             <div className="menu">
                 <div className="nav-links">
                     <Link to={"/about"}>
-                        About
+                        { t('nav.about') }
                     </Link>
                     <button onClick={goToTeamsHash}>
-                        Team
+                        { t('nav.team') }
                     </button>
                     <Link to={"/blog"}>
-                        Blog
+                        { t('nav.blog') }
                     </Link>
                     <Link to={"/products"}>
-                        Products
+                        { t('nav.products') }
                     </Link>
                     <Link to={"/contacts"}>
-                        Contacts
+                        { t('nav.contacts') }
                     </Link>
                 </div>
 
                 <div className="auth">
                     <button className="warning-btn">
-                        login
+                        { t('nav.login') }
                     </button>
                     <span onClick={handleChangeLanguage}>
-                        {currentLanguage}
+                        {
+                            currentLanguage === "ru" ? 
+                                "Рус"  :  "Eng"
+                        }
                     </span>
                 </div>
             </div>
