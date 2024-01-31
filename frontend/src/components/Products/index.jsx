@@ -5,6 +5,7 @@ const initialState = { // начальное состояние
     count: 10,
     text: "",
     color: "red",
+    opacity: 100
 }
 
 function reducerFunction(state, action) {
@@ -19,6 +20,8 @@ function reducerFunction(state, action) {
             return { ...state, color: action.value }
         case 'text':
             return { ...state, text: action.value }
+        case 'opacity':
+            return { ...state, opacity: action.value }
         default:
             return state
     }
@@ -44,6 +47,11 @@ function Products(props) {
 
     function handleDispatch(e) {
         const tag_name = e.target.name
+        const value    = e.target.value
+        dispatch({
+            type: tag_name, 
+            value: value
+        })
     }
 
     return (
@@ -55,32 +63,30 @@ function Products(props) {
                 <br />
                 <br />
                 <button className="warning-btn" name='increment' 
-                    onClick={()=> {dispatch({type:"increment"}) }}
+                    onClick={handleDispatch}
                 >
                     Increment
                 </button>
                 <button className="warning-btn" name='decrement' 
-                    onClick={() => {dispatch({type:"decrement"}) }}
-                >
+                    onClick={handleDispatch}>
                     Decrement
                 </button>
             </div>
 
             <div className="container">
                 <h3>{state.text}</h3>
-                <input type="text" name='text'
-                    onChange={(e) => { dispatch({type:"text", value:e.target.value}) }} 
-                />
+                <input type="text" name='text' onChange={handleDispatch} />
             </div>
 
             <div className="container" style={{backgroundColor: state.color}}>
-                <input type="color" name='color'
-                    onChange={(e) => { dispatch({type:"color", value:e.target.value}) }} 
-                />
+                <input type="color" name='color' onChange={handleDispatch} />
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis id ipsam temporibus quo laborum. Commodi neque facere dicta nihil, alias perspiciatis, quis eos fugiat explicabo, dolor enim eaque ex tenetur?</p>
             </div>
 
-
+            <div className="container">
+                <input type="range" name='opacity' onChange={handleDispatch} />
+                <p style={{opacity:state.opacity+"%"}}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit ipsum obcaecati enim, alias neque ad dolores, eligendi, dolore eum ipsam asperiores suscipit quidem. Expedita numquam veniam, porro eveniet recusandae atque!</p>
+            </div>
         </div>
     );
 }
