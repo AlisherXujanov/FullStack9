@@ -4,9 +4,11 @@ import { useState } from "react"
 function Products(props) {
     const [count, setCount] = useState(10)
     const [text, setText] = useState("")
+    const [color, setColor] = useState("red")
 
     function inc(e) { setCount(count + 1) }
     function dec(e) { setCount(count - 1) }
+
     return (
         <div id="products-wrapper">
             <h2>Products</h2>
@@ -30,8 +32,10 @@ function Products(props) {
                 />
             </div>
 
-
-            {/* Create 8 inputs for useState and control them all */}
+            <div className="container" style={{backgroundColor: color}}>
+                <input type="color" onChange={(e) => setColor(e.target.value)} />
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis id ipsam temporibus quo laborum. Commodi neque facere dicta nihil, alias perspiciatis, quis eos fugiat explicabo, dolor enim eaque ex tenetur?</p>
+            </div>
         </div>
     );
 }
