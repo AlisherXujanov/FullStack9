@@ -5,7 +5,8 @@ const initialState = { // начальное состояние
     count: 10,
     text: "",
     color: "red",
-    opacity: 100
+    opacity: 100,
+    translate: "translateX(0px)"
 }
 
 function reducerFunction(state, action) {
@@ -22,6 +23,10 @@ function reducerFunction(state, action) {
             return { ...state, text: action.value }
         case 'opacity':
             return { ...state, opacity: action.value }
+        case 'right':
+            return { ...state, translate: "translateX(200px)" }
+        case 'left':
+            return { ...state, translate: "translateX(-200px)" }
         default:
             return state
     }
@@ -87,6 +92,29 @@ function Products(props) {
                 <input type="range" name='opacity' onChange={handleDispatch} />
                 <p style={{opacity:state.opacity+"%"}}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit ipsum obcaecati enim, alias neque ad dolores, eligendi, dolore eum ipsam asperiores suscipit quidem. Expedita numquam veniam, porro eveniet recusandae atque!</p>
             </div>
+
+            <div className="container">
+                <button className="warning-btn" name='left'
+                    onClick={handleDispatch}>
+                    Left
+                </button>
+                <button className="warning-btn" name='right'
+                    onClick={handleDispatch}>
+                    Right
+                </button>
+
+                <div align="center" style={{transform: state.translate}}>
+                    <h2>Hello world</h2>
+                </div>
+            </div>
+
+            {/* 
+                10 контейнеров
+                в каждом контейнере инпут (тип разный)
+                используя useReducer, сделать так, чтобы при 
+                изменении инпута менялось контейнер самого инпута
+            */}
+
         </div>
     );
 }
