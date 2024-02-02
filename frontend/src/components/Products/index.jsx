@@ -1,27 +1,34 @@
 import './style.scss'
-// import { createContext, useContext } from 'react'
+import { createContext, useContext } from 'react'
 
-function C1(props) {
+const context = createContext()
+
+
+function C1() {
     return (
         <>
             <h3>C1</h3>
-            <C2 info={props.info}/>
+            <C2 />
         </>
     );
 }
-function C2(props) {
+function C2() {
     return (
         <>
             <h3>C2</h3>
-            <C3 info={props.info}/>
+            <C3 />
         </>
     );
 }
-function C3(props) {
+function C3() {
+    const info = useContext(context)
+
     return (
         <>
             <h3>C3</h3>
-            <p><mark>{props.info}</mark></p>
+            <p>
+                <mark>{info}</mark>
+            </p>
         </>
     );
 }
@@ -32,11 +39,13 @@ function Products(props) {
     const info = "Hello world"
 
     return (
-        <div id="products-wrapper">
-            <h2>Products</h2>
+        <context.Provider value={info}>
+            <div id="products-wrapper">
+                <h2>Products</h2>
 
-            <C1 info={info} />
-        </div>
+                <C1 />
+            </div>
+        </context.Provider>
     );
 }
 
