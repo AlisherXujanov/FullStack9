@@ -9,12 +9,21 @@ function Products(props) {
     return (
         <div id="products-wrapper">
             <h2>Products</h2>
-            <h3>{store.counter}</h3>
-            <button className="warning-btn"
-                onClick={() => setStore({type:'increment'})}
-            >
-                Increment
-            </button>
+            <div className="container">
+                <h3>{store.counter}</h3>
+                <button className="warning-btn"
+                    onClick={() => setStore({ type: 'increment' })}
+                >
+                    Increment
+                </button>
+            </div>
+
+            <div className="container">
+                <input type="color" 
+                    onChange={e => setStore({type:"color", value:e.target.value})}
+                    value={store.color}
+                />
+            </div>
         </div>
     );
 }
