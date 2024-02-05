@@ -4,8 +4,6 @@ function globalReducer(state, action) {
             return { ...state, counter: state.counter + 1 }
         case 'decrement':
             return { ...state, counter: state.counter - 1 }
-        case 'color':
-            return { ...state, color: action.value }
         default:
             return state
     }

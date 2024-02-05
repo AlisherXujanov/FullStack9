@@ -17,12 +17,9 @@ import Img4 from "../../assets/images/img4.png"
 import Img5 from "../../assets/images/img5.png"
 
 import { useTranslation } from "react-i18next"
-import {context} from '../../store'
 import {useContext} from 'react'
-import { Form } from "react-router-dom"
 
 function About() {
-    const { store, setStore } = useContext(context)
     const { t } = useTranslation();
     const images = [Img1, Img2, Img3, Img4, Img5]
 
@@ -34,9 +31,7 @@ function About() {
                     <br />
                     <p>Классический выбор профессиональных инвесторов с заданными умеренными параметрами риска. Основан на инвестировании в бумаги индекса S&P 500 с диверсификацией по 11 секторам экономики.</p>
                     <br />
-                    <button className="warning-btn"
-                        style={{backgroundColor: store.color}}
-                    >Подробнее</button>
+                    <button className="warning-btn">Подробнее</button>
                 </div>
             </CarouselComponent>
 
