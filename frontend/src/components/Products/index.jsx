@@ -1,5 +1,5 @@
 import './style.scss'
-import './spinner.scss'
+import Spinner from "../common/Spinner"
 import { context } from '../../store'
 import { useContext, useEffect } from 'react'
 import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
@@ -67,17 +67,7 @@ function Products(props) {
                         else if (isLoading) {
                             return (
                                 <div>
-                                    <div class="breeding-rhombus-spinner">
-                                        <div class="rhombus child-1"></div>
-                                        <div class="rhombus child-2"></div>
-                                        <div class="rhombus child-3"></div>
-                                        <div class="rhombus child-4"></div>
-                                        <div class="rhombus child-5"></div>
-                                        <div class="rhombus child-6"></div>
-                                        <div class="rhombus child-7"></div>
-                                        <div class="rhombus child-8"></div>
-                                        <div class="rhombus big"></div>
-                                    </div>
+                                    
                                 </div>
                             )
                         }
