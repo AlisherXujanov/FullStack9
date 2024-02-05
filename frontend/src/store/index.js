@@ -6,6 +6,7 @@ const context = createContext()
 const initialState = {
     lang: 'en',
     counter: 0,
+    joke: {}
 }
 
 export {
