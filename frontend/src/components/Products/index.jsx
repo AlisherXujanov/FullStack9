@@ -67,7 +67,7 @@ function Products(props) {
                         else if (isLoading) {
                             return (
                                 <div>
-                                    
+                                    <Spinner />
                                 </div>
                             )
                         }
