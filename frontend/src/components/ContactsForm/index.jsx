@@ -2,6 +2,8 @@ import "./style.scss"
 import Rectangle from "./Rectangle.png"
 import emailjs from '@emailjs/browser';
 import { useState } from "react";
+import { toast } from 'react-toastify';
+
 
 function ContactsForm() {
     const [form, setForm] = useState({})
@@ -15,6 +17,27 @@ function ContactsForm() {
 
     function submit(e) {
         e.preventDefault()
+
+        const templateParams = {
+            from_name: form.name,
+            to_name: 'admin',
+            from_email: form.email,
+            phone: form.number,
+            message: form.notes,
+        }
+
+        emailjs
+            .send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams, {
+                publicKey: 'YOUR_PUBLIC_KEY',
+            })
+            .then(
+                (response) => {
+                    toast.success('Ваше сообщение отправлено!', {theme: "dark"})
+                },
+                (err) => {
+                    toast.error('Что-то пошло не так, попробуйте позже', {theme: "dark"})
+                },
+            );
     }
 
     return (
