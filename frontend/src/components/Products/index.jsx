@@ -3,7 +3,7 @@ import Spinner from "../common/Spinner"
 import { context } from '../../store'
 import { useContext, useEffect } from 'react'
 import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
-
+import Test from "./Test.jsx"
 
 const URL = 'https://official-joke-api.appspot.com/random_joke'
 
@@ -85,6 +85,10 @@ function Products(props) {
                         return (<div>Default message before request is made.</div>)
                     }}
                 </Get>
+            </div>
+
+            <div className="container">
+                <Test />
             </div>
         </div>
     );
