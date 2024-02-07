@@ -42,7 +42,7 @@ function Blog(props) {
                                 <p className="subtitle-1">
                                     {item.subtitle1}
                                 </p>
-                                <Link to={"/blog/details/" +item.id}>
+                                <Link to={"/blog/details/" + item.id}>
                                     <button className="warning-btn">
                                         Подробнее
                                     </button>

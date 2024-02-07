@@ -1,7 +1,18 @@
 import "./style.scss"
 import Rectangle from "./Rectangle.png"
+import emailjs from '@emailjs/browser';
+import { useState } from "react";
 
 function ContactsForm() {
+    const [form, setForm] = useState({})
+
+    function handleChange(e) {
+        e.preventDefault()
+        let key = e.target.name
+        let val = e.target.value
+        setForm({ ...form, [key]: val })
+    }
+
     function submit(e) {
         e.preventDefault()
     }
@@ -12,16 +23,16 @@ function ContactsForm() {
                 <input
                     id="full-name-input" type="text"
                     placeholder="Полное имя" name='name'
-                    required
+                    required onChange={handleChange}
                 />
                 <div>
                     <input
                         id="email-input" type="email" placeholder="Почта"
-                        name='email' required
+                        name='email' required onChange={handleChange}
                     />
                     <input
                         id="number-input" type="number" placeholder="Номер телефона"
-                        name='number' required
+                        name='number' required onChange={handleChange}
                     />
                 </div>
                 <textarea
@@ -31,6 +42,7 @@ function ContactsForm() {
                     placeholder="Текст сообщения"
                     name='notes'
                     required
+                    onChange={handleChange}
                 ></textarea>
                 <button className="warning-btn">
                     Получить консультацию
