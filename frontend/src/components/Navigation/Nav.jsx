@@ -1,19 +1,25 @@
 import Heading from "../common/Heading"
 import { Link, useNavigate } from 'react-router-dom'
-import { useState } from "react"
-import { useTranslation } from "react-i18next"
 
+import { useContext } from "react";
+import { globalContext } from "../../state";
+import { useTranslation } from "react-i18next";
+
+// 1. Create a burger
+// 2. Put the input checkbox onto the burger and make it invisible
+// 3. Open the Nav-width div when the checkbox is checked
 
 function Nav(props) {
-    const navigate = useNavigate()
-
+    const navigate = useNavigate();
+    const state = useContext(globalContext);
     const { t, i18n: { changeLanguage, language } } = useTranslation();
-    const [currentLanguage, setCurrentLanguage] = useState(language)
 
-    const handleChangeLanguage = () => {
-        const newLanguage = currentLanguage === "en" ? "ru" : "en";
-        setCurrentLanguage(newLanguage);
-        changeLanguage(newLanguage);
+    const newLanguage = () => {
+        return language === "en" ? "ru" : "en";
+    }
+    const initiateChangeLanguage = () => {
+        state.dispatch({ type: "CHANGE_LANG", currentLanguage: newLanguage() })
+        changeLanguage(newLanguage());
     }
 
     const goToTeamsHash = () => {
@@ -39,31 +45,28 @@ function Nav(props) {
             <div className="menu">
                 <div className="nav-links">
                     <Link to={"/about"}>
-                        { t('nav.about') }
+                        {t('about')}
                     </Link>
                     <button onClick={goToTeamsHash}>
-                        { t('nav.team') }
+                        {t('team')}
                     </button>
                     <Link to={"/blog"}>
-                        { t('nav.blog') }
+                        {t('blog')}
                     </Link>
                     <Link to={"/products"}>
-                        { t('nav.products') }
+                        {t('products')}
                     </Link>
                     <Link to={"/contacts"}>
-                        { t('nav.contacts') }
+                        {t('contacts')}
                     </Link>
                 </div>
 
                 <div className="auth">
                     <button className="warning-btn">
-                        { t('nav.login') }
+                        {t('login')}
                     </button>
-                    <span onClick={handleChangeLanguage}>
-                        {
-                            currentLanguage === "ru" ? 
-                                "Рус"  :  "Eng"
-                        }
+                    <span onClick={initiateChangeLanguage} >
+                        {newLanguage()}
                     </span>
                 </div>
             </div>

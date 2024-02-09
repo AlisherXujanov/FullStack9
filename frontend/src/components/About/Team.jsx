@@ -5,7 +5,6 @@ import FourthImage from "../../assets/images/team/4.jpg"
 import FifthImage from "../../assets/images/team/5.jpg"
 import SixthImage from "../../assets/images/team/6.jpg"
 
-
 function Team(props) {
     return (
         <div>

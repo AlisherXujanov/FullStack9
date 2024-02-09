@@ -1,16 +1,10 @@
 {
     "translation": {
-        "nav": {
-            "about": "О нас",
-            "team": "Команда",
-            "blog": "Блог",
-            "products": "Продукты",
-            "contacts": "Контакты",
-            "login": "Логин"
-        },
-        "headings": {
-            "ourTeam": "Наша команда",
-            "companyBlog": "Блог компании"
-        }
+        "login": "Войти",
+        "about": "О нас",
+        "team": "Команда",
+        "blog": "Блог",
+        "products": "Продукты",
+        "contacts": "Контакты"
     }
 }

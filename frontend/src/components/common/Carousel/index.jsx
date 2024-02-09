@@ -1,32 +1,54 @@
 import "./style.scss"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import BlogSlideItem from "./BlogSlideItem.jsx"
 
 function CarouselComponent(props) {
     const imgStyle = {
         filter: props.blurred ? "grayscale(100%) brightness(0.5)" : "none"
     }
-
     const indicatorsAsNumbers = (onClickHandler, isSelected, index, label) => {
-        const defStyle = { marginLeft: 20, color: "white", cursor: "pointer" };
-        const style = isSelected
-            ? { ...defStyle, color: "red" }
-            : { ...defStyle };
-        return (
-            <span
-                style={style}
-                onClick={onClickHandler}
-                onKeyDown={onClickHandler}
-                value={index}
-                key={index}
-                role="button"
-                tabIndex={0}
-                aria-label={`${label} ${index + 1}`}
-            >
-                {index+1}
-            </span>
-        );
+        if (props.images.length > 10 ) {
+            return (
+                <span>
+                    .
+                    <span
+                        className={
+                            isSelected ? "indicator selected" : "indicator-hidden"
+                        }
+                        onClick={onClickHandler}
+                        onKeyDown={onClickHandler}
+                        value={index}
+                        key={index}
+                        role="button"
+                        tabIndex={index}
+                        aria-label={`${label} ${index + 1}`}
+                    >
+                        {index + 1}
+                    </span>
+                    .
+                </span>
+            )
+        } else {
+            return (
+                <span
+                    className={
+                        isSelected ? "indicator selected" : "indicator"
+                    }
+                    onClick={onClickHandler}
+                    onKeyDown={onClickHandler}
+                    value={index}
+                    key={index}
+                    role="button"
+                    tabIndex={index}
+                    aria-label={`${label} ${index + 1}`}
+                >
+                    {index + 1}
+                </span>
+            )
+        }
     }
+
 
     return (
         <section className="carousel-section">
@@ -41,19 +63,36 @@ function CarouselComponent(props) {
                 renderIndicator={props.indicatorsAsNumbers ? indicatorsAsNumbers : undefined}
             >
                 {
-                    props.images.map((img, index) => {
-                        return (
-                            <div key={index}>
-                                <img
-                                    style={imgStyle}
-                                    src={img}
-                                    alt={"Carousel-item-" + index}
-                                    width={"100%"}
-                                    height="650"
-                                />
-                            </div>
-                        )
-                    })
+                    props.indicatorsAsNumbers ?
+                        props.images.map((slide, index) => {
+                            return (
+                                <div className="c-slide-wrapper" key={10000 + index}>
+                                    {
+                                        slide.map((info, index) => {
+                                            return (
+                                                <div key={index} className="slide">
+                                                    <BlogSlideItem info={info} />
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            )
+                        })
+                        :
+                        props.images.map((img, index) => {
+                            return (
+                                <div className="c-image-wrapper" key={index}>
+                                    <img
+                                        style={imgStyle}
+                                        src={img}
+                                        alt={"Carousel-item-" + index}
+                                        width={"100%"}
+                                        height="650"
+                                    />
+                                </div>
+                            )
+                        })
                 }
             </Carousel>
         </section>

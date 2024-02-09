@@ -1,24 +1,26 @@
 import './style.scss'
 import Spinner from "../common/Spinner"
-import { context } from '../../store'
+import { globalContext } from '../../state'
 import { useContext, useEffect } from 'react'
-import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
+import { Get } from 'react-axios'
 
 const URL = 'https://official-joke-api.appspot.com/random_joke'
 
 function Products(props) {
-    const { store, setStore } = useContext(context)
+    const state = useContext(globalContext)
 
     useEffect(() => {
         fetchJoke()
+        // NOTE: This next line is a hack to get rid of the warning messages in the console.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     async function fetchJoke() {
         // fetch(URL)
         // .then(res => res.json())
-        // .then(data => setStore({ type: 'setJoke', payload: data }))
+        // .then(data => setstate({ type: 'setJoke', payload: data }))
         const respone = await fetch(URL)
-        setStore({ type: 'setJoke', payload: await respone.json() })
+        state.dispatch({ type: 'setJoke', payload: await respone.json() })
     }
 
     const punchlineStyle = {
@@ -30,9 +32,9 @@ function Products(props) {
         <div id="products-wrapper">
             <h2>Products</h2>
             <div className="container">
-                <h3>{store.counter}</h3>
+                <h3>{state.count}</h3>
                 <button className="warning-btn"
-                    onClick={() => setStore({ type: 'increment' })}
+                    onClick={() => state.dispatch({ type: 'increment' })}
                 >
                     Increment
                 </button>
@@ -44,8 +46,8 @@ function Products(props) {
                 </button>
                 <br />
                 <br />
-                <h3>{store.joke.setup}</h3>
-                <h3 style={punchlineStyle}>{store.joke.punchline}</h3>
+                <h3>{state.joke.setup}</h3>
+                <h3 style={punchlineStyle}>{state.joke.punchline}</h3>
             </div>
 
             <div className="container">

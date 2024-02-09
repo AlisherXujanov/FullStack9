@@ -1,22 +1,48 @@
-import Pagination from "../common/Pagination"
-import BlogItems from "../../db/blog.json"
+import CarouselComponent from "../common/Carousel"
+import blogs from "../../db/blog.json"
 
+function CompanyBlog() {
 
-function CompanyBlog(props) {
-    let itemsPerPage = 3
+    // Separate blog items by 3 items per slide
+    let breakPointItemsNumber = 3
+    // let large_screen = window.matchMedia("(max-width: 1100px)")
+    // let medium_screen = window.matchMedia("(max-width: 855px)")
 
-    const largeScreen = 1100
-    const mediumScreen = 700
-    if (window.innerWidth < largeScreen) { itemsPerPage = 2 }
-    if (window.innerWidth < mediumScreen) { itemsPerPage = 1 }
+    let large_screen = 1100
+    let medium_screen = 855
+    
+    if (window.innerWidth < large_screen) {
+        breakPointItemsNumber = 2
+    }
+    if (window.innerWidth < medium_screen) {
+        breakPointItemsNumber = 1
+    }
+
+    function getSlides() {
+        let slides = []
+        for (let item of blogs) {
+            let last_arr_slide = slides[slides.length - 1]
+    
+            if (!last_arr_slide) {
+                slides.push([item])
+            } else {
+                if (last_arr_slide.length < breakPointItemsNumber) {
+                    last_arr_slide.push(item)
+                } else {
+                    slides.push([item])
+                }
+            }
+        }
+        return slides
+    }
 
     return (
         <>
-            <Pagination
-                items={BlogItems}
-                itemsPerPage={itemsPerPage}
-                layoutName={"BlogLayout"}
+            <CarouselComponent
+                images={getSlides()}
+                indicatorsAsNumbers={true}
             />
+
         </>
     );
 }
