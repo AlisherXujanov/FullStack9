@@ -87,7 +87,6 @@ function Products(props) {
                     }}
                 </Get>
             </div>
-
         </div>
     );
 }

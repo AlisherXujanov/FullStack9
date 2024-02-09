@@ -34,6 +34,12 @@ npm install -g json-server
 json-server --watch db.json
 ```
 
+For changing the port, use the --port flag:
+    - RU: Для изменения порта используйте флаг --port:
+```bash
+json-server --watch db.json --port 7070
+```
+
 ## 5. USE json-server in your project:
     - RU: ИСПОЛЬЗУЙТЕ json-server в своем проекте:
 We can use any HTTP method (GET, POST, PUT, DELETE) to interact with the server. 

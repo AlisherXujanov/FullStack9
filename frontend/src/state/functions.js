@@ -17,6 +17,8 @@ function globalReducerFunction(state, action) {
             return { ...state, count: state.count - 1 }
         case "setJoke":
             return { ...state, joke: action.payload }
+        case "toggleAuthModal":
+            return { ...state, showAuth: !state.showAuth }
         default:
             return state
     }
