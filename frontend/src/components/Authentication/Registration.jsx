@@ -3,10 +3,13 @@ import "./authContent.scss"
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import { BASE_URL } from '../../state'
+import { useContext } from "react";
+import { globalContext } from "../../state";
 
 function Registration(props) {
     const [regState, setRegState] = useState({})
     const [errors, setErrors] = useState({})
+    const state = useContext(globalContext);
 
     async function submit(e) {
         e.preventDefault();
@@ -35,12 +38,13 @@ function Registration(props) {
             "Successfully created a new account for " + regState.username,
             { theme: "dark", toastId: 10 }
         )
-        await createNewAccount()
+        await createNewAccount(e)
         setRegState({})
         e.target.reset()
+        state.toggleAuthModal(e)
     }
 
-    async function createNewAccount() {
+    async function createNewAccount(e) {
         const URL_address = BASE_URL + "users"
         const response = await fetch(URL_address,
             {
