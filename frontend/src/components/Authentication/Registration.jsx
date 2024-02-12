@@ -1,12 +1,23 @@
 import Heading from '../common/Heading'
 import "./authContent.scss"
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 
 function Registration(props) {
     const [regState, setRegState] = useState({})
 
     function submit(e) {
         e.preventDefault();
+
+        if (!regState.username || !regState.email || !regState.password1 || !regState.password2) {
+            toast.error("Please, fill in all fields", {theme: "dark"})
+            return
+        } else if (!regState.password1 !== !regState.password2) {
+            toast.error("Passwords do not match", {theme: "dark"})
+            return
+        }
+
+        
     }
 
     function handleState(e) {
