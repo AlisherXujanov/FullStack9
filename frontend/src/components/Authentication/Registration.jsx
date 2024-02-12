@@ -10,8 +10,11 @@ function Registration(props) {
         <div className="auth-content-wrapper">
             <Heading size={2}>Registration</Heading>
 
-
             <form onSubmit={submit}>
+                <div className="form-control">
+                    <label htmlFor="name">Username</label>
+                    <input type="name" id="name" placeholder='Username' />
+                </div>
                 <div className="form-control">
                     <label htmlFor="email">Email</label>
                     <input type="email" id="email" placeholder='Email' />

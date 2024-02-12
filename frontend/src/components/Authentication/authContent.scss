@@ -38,4 +38,17 @@
             }
         }
     }
+
+    @media (max-width: $medium-screen) {
+        form {
+            .form-control {
+                margin: 20px 0;
+            }
+        }
+    }
+    @media (max-width: $small-screen) {
+        form {
+            padding-top: 10px;
+        }
+    }
 }

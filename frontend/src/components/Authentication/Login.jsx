@@ -13,8 +13,8 @@ function Login(props) {
 
             <form onSubmit={submit}>
                 <div className="form-control">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" id="email" placeholder='Email' />
+                    <label htmlFor="email">Username or Email</label>
+                    <input type="email" id="email" placeholder='Username or Email' />
                 </div>
                 <div className="form-control">
                     <label htmlFor="password">Password</label>
