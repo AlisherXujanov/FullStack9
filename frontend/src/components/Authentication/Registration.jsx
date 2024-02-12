@@ -23,17 +23,17 @@ function Registration(props) {
 
             // if (!regState.password2) { setErrors({...errors, 'password2':true}) }
             // else { setErrors({...errors, 'password2':false}) }
-            toast.error("Please, fill in all fields", {theme: "dark", toastId: 10})
+            toast.error("Please, fill in all fields", { theme: "dark", toastId: 10 })
             return
         } else if (regState.password1 !== regState.password2) {
-            toast.error("Passwords do not match", {theme: "dark", toastId: 10})
+            toast.error("Passwords do not match", { theme: "dark", toastId: 10 })
             return
         }
 
         // fetch()    
         toast.success(
-            "Successfully created a new account for " + regState.username, 
-            {theme: "dark", toastId: 10}
+            "Successfully created a new account for " + regState.username,
+            { theme: "dark", toastId: 10 }
         )
         await createNewAccount()
         setRegState({})
@@ -42,8 +42,18 @@ function Registration(props) {
 
     async function createNewAccount() {
         const URL_address = BASE_URL + "users"
-        const response = await fetch(URL_address)
+        const response = await fetch(URL_address,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(regState)
+            }
+        )
+        console.log(response)
         const data = await response.json()
+        console.log(data)
     }
 
     function handleState(e) {
@@ -59,7 +69,7 @@ function Registration(props) {
             <form onSubmit={submit}>
                 <div className="form-control">
                     <label htmlFor="name">Username</label>
-                    <input 
+                    <input
                         className={errors.username ? "input-error" : ""}
                         type="name" id="name" placeholder='Username' name='username'
                         onChange={handleState}
@@ -67,7 +77,7 @@ function Registration(props) {
                 </div>
                 <div className="form-control">
                     <label htmlFor="email">Email</label>
-                    <input 
+                    <input
                         className={errors.email ? "input-error" : ""}
                         type="email" id="email" placeholder='Email' name='email'
                         onChange={handleState}
@@ -75,7 +85,7 @@ function Registration(props) {
                 </div>
                 <div className="form-control">
                     <label htmlFor="password">Password</label>
-                    <input 
+                    <input
                         className={errors.password1 ? "input-error" : ""}
                         type="password" id="password" placeholder='Password' name='password1'
                         onChange={handleState}
@@ -83,7 +93,7 @@ function Registration(props) {
                 </div>
                 <div className="form-control">
                     <label htmlFor="password-conf">Password confirmation</label>
-                    <input 
+                    <input
                         className={errors.password2 ? "input-error" : ""}
                         type="password" id="password-conf" placeholder='Password confirmation' name='password2'
                         onChange={handleState}

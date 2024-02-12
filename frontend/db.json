@@ -1,11 +1,18 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "name": "admin",
-            "email": "admin@gmail.com",
-            "password": "qweqweqwe",
-            "role": "admin"
-        }
-    ]
+  "users": [
+    {
+      "id": "1",
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "qweqweqwe",
+      "role": "admin"
+    },
+    {
+      "id": "4bef",
+      "username": "Alisher",
+      "email": "alisherxujanov163@gmail.com",
+      "password1": "qweqweqwe",
+      "password2": "qweqweqwe"
+    }
+  ]
 }
